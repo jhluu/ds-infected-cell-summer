@@ -1,0 +1,88 @@
+Jul-16 15:00:21.069 [main] DEBUG nextflow.cli.Launcher - $> nextflow run olgabot/crispr-screen-nf -r patch-2 --treatment_fastq '/mnt/ibm_lg/jacklyn.luu/fastqs_AB/RV/*treatment.fastq.gz' --control_fastq '/mnt/ibm_lg/jacklyn.luu/fastqs_AB/RV/*control.fastq.gz' --library /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Human_GeCKOv2_Library_combine.csv --output_prefix RV --output /mnt/ibm_lg/jacklyn.luu/output_combined/RV
+Jul-16 15:00:21.205 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.04.2
+Jul-16 15:00:22.193 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/.git/config; branch: main; remote: origin; url: https://github.com/olgabot/crispr-screen-nf.git
+Jul-16 15:00:22.207 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/.git/config; branch: main; remote: origin; url: https://github.com/olgabot/crispr-screen-nf.git
+Jul-16 15:00:22.473 [main] INFO  nextflow.cli.CmdRun - Launching `olgabot/crispr-screen-nf` [trusting_goldberg] - revision: ff9c3635ec [patch-2]
+Jul-16 15:00:23.055 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/nextflow.config
+Jul-16 15:00:23.055 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/jacklyn.luu/ds-infected-cell-summer/workflows/makefile_combinedAB/nextflow.config
+Jul-16 15:00:23.057 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/nextflow.config
+Jul-16 15:00:23.057 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jacklyn.luu/ds-infected-cell-summer/workflows/makefile_combinedAB/nextflow.config
+Jul-16 15:00:23.072 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-16 15:00:23.153 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-16 15:00:23.256 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/jacklyn.luu/.nextflow/plugins
+Jul-16 15:00:23.257 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-16 15:00:23.276 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins local root: .nextflow/plr/21921f6807262d1f701978cdf8a1f5c4
+Jul-16 15:00:23.283 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-16 15:00:23.284 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-16 15:00:23.289 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-16 15:00:23.301 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-tower@1.1.0' resolved
+Jul-16 15:00:23.312 [main] DEBUG nextflow.plugin.PluginUpdater - Starting plugin nf-tower version: 1.1.0
+Jul-16 15:00:23.312 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-tower@1.1.0'
+Jul-16 15:00:23.317 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-tower@1.1.0
+Jul-16 15:00:23.375 [main] DEBUG nextflow.Session - Session uuid: 02776951-9e5b-4909-b0f8-9da6dcdfb642
+Jul-16 15:00:23.375 [main] DEBUG nextflow.Session - Run name: trusting_goldberg
+Jul-16 15:00:23.376 [main] DEBUG nextflow.Session - Executor pool size: 112
+Jul-16 15:00:23.407 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.04.2 build 5558
+  Created: 12-07-2021 07:54 UTC (00:54 PDT)
+  System: Linux 4.15.0-66-generic
+  Runtime: Groovy 3.0.7 on OpenJDK 64-Bit Server VM 11.0.11+9-Ubuntu-0ubuntu2.18.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 13023@tesla [127.0.1.1]
+  CPUs: 112 - Mem: 1.5 TB (373.5 GB) - Swap: 2 GB (0)
+Jul-16 15:00:23.426 [main] DEBUG nextflow.Session - Work-dir: /mnt/ibm_lg/jacklyn.luu/nexflow-work [nfs]
+Jul-16 15:00:23.451 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-16 15:00:23.471 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-16 15:00:23.474 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jul-16 15:00:23.713 [main] DEBUG nextflow.Session - Session start invoked
+Jul-16 15:00:23.727 [main] DEBUG io.seqera.tower.plugin.TowerClient - Creating Tower observer -- endpoint=http://nftower.czbiohub.org:8000/api; requestInterval=1s; aliveInterval=1m; maxRetries=5; backOffBase=3; backOffDelay=250
+Jul-16 15:00:24.160 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-16 15:00:24.637 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: mageck_test_ntc, mageck_flute_mle, treatment_mageck, join_counts, mageck_test_mle, mageck_flute_rra, mageck, control_mageck, mageck_test_rra
+Jul-16 15:00:24.850 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:00:24.850 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:00:24.858 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-16 15:00:24.866 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=112; memory=1.5 TB; capacity=112; pollInterval=100ms; dumpInterval=5m
+Jul-16 15:00:25.065 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:00:25.065 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:00:25.102 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:00:25.102 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:00:25.115 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:00:25.115 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:00:25.123 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:00:25.123 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:00:25.259 [main] INFO  io.seqera.tower.plugin.TowerClient - Monitor the execution with Nextflow Tower using this url http://nftower.czbiohub.org:8000/watch/1qEIT7KldD6aS4
+Jul-16 15:00:25.263 [main] DEBUG nextflow.Session - Ignite dataflow network (8)
+Jul-16 15:00:25.271 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > treatment_mageck
+Jul-16 15:00:25.273 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > control_mageck
+Jul-16 15:00:25.274 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > join_counts
+Jul-16 15:00:25.275 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > mageck_test_rra
+Jul-16 15:00:25.276 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > mageck_flute_rra
+Jul-16 15:00:25.277 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jul-16 15:00:25.277 [main] DEBUG nextflow.Session - Session await
+Jul-16 15:00:25.277 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/RV/; pattern: *treatment.fastq.gz; options: [:]
+Jul-16 15:00:25.277 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/RV/; pattern: *control.fastq.gz; options: [:]
+Jul-16 15:00:25.516 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:00:25.523 [Task submitter] INFO  nextflow.Session - [c2/79eee7] Submitted process > control_mageck (1)
+Jul-16 15:00:25.541 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:00:25.542 [Task submitter] INFO  nextflow.Session - [d2/4d2a08] Submitted process > treatment_mageck (1)
+Jul-16 15:01:24.280 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: control_mageck (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/c2/79eee79433922eeb91ba0419214333]
+Jul-16 15:01:24.320 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=336; maxQueueSize=1008; keepAlive=1m
+Jul-16 15:01:37.040 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: treatment_mageck (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/d2/4d2a08687b894548aa0caefed06f6e]
+Jul-16 15:01:37.089 [Actor Thread 10] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py
+Jul-16 15:01:37.113 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:01:37.114 [Task submitter] INFO  nextflow.Session - [4b/87a9d6] Submitted process > join_counts
+Jul-16 15:01:42.184 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: join_counts; status: COMPLETED; exit: 0; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/4b/87a9d6fcb9eeaf3d482708b014562e]
+Jul-16 15:01:42.257 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:01:42.258 [Task submitter] INFO  nextflow.Session - [15/1e5246] Submitted process > mageck_test_rra
+Jul-16 15:02:25.561 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: mageck_test_rra; status: COMPLETED; exit: 0; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/15/1e524632bba1fd29a34504d39b495d]
+Jul-16 15:02:25.607 [Actor Thread 12] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/mageck_flute_rra.R
+Jul-16 15:02:25.635 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:02:25.636 [Task submitter] INFO  nextflow.Session - [72/93ac3e] Submitted process > mageck_flute_rra
+Jul-16 15:05:17.518 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: mageck_flute_rra; status: COMPLETED; exit: 0; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/72/93ac3e5fc227b837693fcbf2054a6c]
+Jul-16 15:05:17.532 [main] DEBUG nextflow.Session - Session await > all process finished
+Jul-16 15:05:17.535 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-16 15:05:17.754 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=5m 38s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Jul-16 15:05:18.003 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jul-16 15:05:18.003 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-tower@1.1.0'
+Jul-16 15:05:18.003 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-tower
+Jul-16 15:05:18.013 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,112 @@
+Jul-16 15:46:47.277 [main] DEBUG nextflow.cli.Launcher - $> nextflow run olgabot/crispr-screen-nf -r patch-2 --treatment_fastq '/mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/*treatment.fastq.gz' --control_fastq '/mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/*control.fastq.gz' --library /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Human_GeCKOv2_Library_combine.csv --output_prefix Wang_OC43 --output /mnt/ibm_lg/jacklyn.luu/output_combined/Wang_OC43
+Jul-16 15:46:47.380 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.04.2
+Jul-16 15:46:48.111 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/.git/config; branch: main; remote: origin; url: https://github.com/olgabot/crispr-screen-nf.git
+Jul-16 15:46:48.124 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/.git/config; branch: main; remote: origin; url: https://github.com/olgabot/crispr-screen-nf.git
+Jul-16 15:46:48.352 [main] INFO  nextflow.cli.CmdRun - Launching `olgabot/crispr-screen-nf` [golden_rosalind] - revision: ff9c3635ec [patch-2]
+Jul-16 15:46:48.820 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/nextflow.config
+Jul-16 15:46:48.821 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/jacklyn.luu/ds-infected-cell-summer/workflows/makefile_combinedAB/nextflow.config
+Jul-16 15:46:48.821 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/nextflow.config
+Jul-16 15:46:48.822 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jacklyn.luu/ds-infected-cell-summer/workflows/makefile_combinedAB/nextflow.config
+Jul-16 15:46:48.830 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-16 15:46:48.899 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-16 15:46:48.997 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/jacklyn.luu/.nextflow/plugins
+Jul-16 15:46:48.998 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-16 15:46:49.016 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins local root: .nextflow/plr/21921f6807262d1f701978cdf8a1f5c4
+Jul-16 15:46:49.022 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-16 15:46:49.023 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-16 15:46:49.028 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-16 15:46:49.038 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-tower@1.1.0' resolved
+Jul-16 15:46:49.044 [main] DEBUG nextflow.plugin.PluginUpdater - Starting plugin nf-tower version: 1.1.0
+Jul-16 15:46:49.044 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-tower@1.1.0'
+Jul-16 15:46:49.048 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-tower@1.1.0
+Jul-16 15:46:49.096 [main] DEBUG nextflow.Session - Session uuid: 03657e1a-99ea-4b0b-82c1-722883623556
+Jul-16 15:46:49.096 [main] DEBUG nextflow.Session - Run name: golden_rosalind
+Jul-16 15:46:49.097 [main] DEBUG nextflow.Session - Executor pool size: 112
+Jul-16 15:46:49.126 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.04.2 build 5558
+  Created: 12-07-2021 07:54 UTC (00:54 PDT)
+  System: Linux 4.15.0-66-generic
+  Runtime: Groovy 3.0.7 on OpenJDK 64-Bit Server VM 11.0.11+9-Ubuntu-0ubuntu2.18.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 105892@tesla [127.0.1.1]
+  CPUs: 112 - Mem: 1.5 TB (616.8 GB) - Swap: 2 GB (0)
+Jul-16 15:46:49.144 [main] DEBUG nextflow.Session - Work-dir: /mnt/ibm_lg/jacklyn.luu/nexflow-work [nfs]
+Jul-16 15:46:49.164 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-16 15:46:49.180 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-16 15:46:49.184 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jul-16 15:46:49.370 [main] DEBUG nextflow.Session - Session start invoked
+Jul-16 15:46:49.384 [main] DEBUG io.seqera.tower.plugin.TowerClient - Creating Tower observer -- endpoint=http://nftower.czbiohub.org:8000/api; requestInterval=1s; aliveInterval=1m; maxRetries=5; backOffBase=3; backOffDelay=250
+Jul-16 15:46:49.732 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-16 15:46:50.092 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: mageck_test_ntc, mageck_flute_mle, treatment_mageck, join_counts, mageck_test_mle, mageck_flute_rra, mageck, control_mageck, mageck_test_rra
+Jul-16 15:46:50.261 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:46:50.261 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:46:50.265 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-16 15:46:50.270 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=112; memory=1.5 TB; capacity=112; pollInterval=100ms; dumpInterval=5m
+Jul-16 15:46:50.335 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:46:50.336 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:46:50.359 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:46:50.359 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:46:50.367 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:46:50.368 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:46:50.373 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-16 15:46:50.373 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-16 15:46:50.513 [main] INFO  io.seqera.tower.plugin.TowerClient - Monitor the execution with Nextflow Tower using this url http://nftower.czbiohub.org:8000/watch/15E5jOWxpXmSyb
+Jul-16 15:46:50.517 [main] DEBUG nextflow.Session - Ignite dataflow network (8)
+Jul-16 15:46:50.527 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > treatment_mageck
+Jul-16 15:46:50.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > control_mageck
+Jul-16 15:46:50.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > join_counts
+Jul-16 15:46:50.529 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > mageck_test_rra
+Jul-16 15:46:50.530 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > mageck_flute_rra
+Jul-16 15:46:50.530 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jul-16 15:46:50.530 [main] DEBUG nextflow.Session - Session await
+Jul-16 15:46:50.536 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/; pattern: *treatment.fastq.gz; options: [:]
+Jul-16 15:46:50.536 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/; pattern: *control.fastq.gz; options: [:]
+Jul-16 15:46:50.546 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - No such file: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/ -- Skipping visit
+Jul-16 15:46:50.546 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - No such file: /mnt/ibm_lg/jacklyn.luu/fastqs_AB/Wang_OC43/ -- Skipping visit
+Jul-16 15:46:50.667 [Actor Thread 5] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py
+Jul-16 15:46:50.770 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-16 15:46:50.776 [Task submitter] INFO  nextflow.Session - [0b/3560c9] Submitted process > join_counts
+Jul-16 15:46:52.929 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: join_counts; status: COMPLETED; exit: 1; error: -; workDir: /mnt/ibm_lg/jacklyn.luu/nexflow-work/0b/3560c9831b0fdc823f29986a16a9ea]
+Jul-16 15:46:52.960 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'join_counts'
+
+Caused by:
+  Process `join_counts` terminated with an error exit status (1)
+
+Command executed:
+
+  set -Eeuo pipefail
+  
+  join_counts.py "Wang_OC43"
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  Traceback (most recent call last):
+    File "/home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py", line 37, in <module>
+      list_files_in_folder("treatment"),
+    File "/home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py", line 29, in list_files_in_folder
+      for fp in os.listdir(folder)
+  FileNotFoundError: [Errno 2] No such file or directory: 'treatment'
+
+Work dir:
+  /mnt/ibm_lg/jacklyn.luu/nexflow-work/0b/3560c9831b0fdc823f29986a16a9ea
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jul-16 15:46:52.967 [main] DEBUG nextflow.Session - Session await > all process finished
+Jul-16 15:46:52.981 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Jul-16 15:46:53.001 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-16 15:46:53.010 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=2.1s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jul-16 15:46:53.244 [main] WARN  i.s.tower.plugin.TowerJsonGenerator - Tower request field `workflow.errorMessage` exceeds expected size | offending value: `Traceback (most recent call last):
+  File "/home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py", line 37, in <module>
+    list_files_in_folder("treatment"),
+  File "/home/jacklyn.luu/.nextflow/assets/olgabot/crispr-screen-nf/bin/join_counts.py", line 29, in list_files_in_folder
+    for fp in os.listdir(folder)
+FileNotFoundError: [Errno 2] No such file or directory: 'treatment'`, size: 406 (max: 255)
+Jul-16 15:46:53.317 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jul-16 15:46:53.317 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-tower@1.1.0'
+Jul-16 15:46:53.317 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-tower
+Jul-16 15:46:53.329 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
