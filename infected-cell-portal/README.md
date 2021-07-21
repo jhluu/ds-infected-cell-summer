@@ -1,4 +1,4 @@
-# tabula-hub
+# infected-cell
 
 # Getting setup for development
 
