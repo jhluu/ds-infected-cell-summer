@@ -13,7 +13,6 @@ import AboutLemur from "./infected-cell-pages/About.jsx";
 import DataAccess from "./infected-cell-pages/DataAccess.jsx";
 import CellxgeneInfoBoxView from "./infected-cell-pages/CellxgeneInfoBoxView.jsx";
 import DataVizs from "./infected-cell-pages/DataVizs.jsx";
-// import CellTypesComponent from "./infected-cell-pages/CellTypes.jsx";
 
 import cs from "./appIC.scss";
 import { StylesProvider } from "@material-ui/core/styles";
@@ -59,7 +58,7 @@ class AppInfectedCell extends Component {
                     </CZUILink>,
                     <CZUILink
                       component={Link}
-                      to="/vizs"
+                      to="/datavizs"
                       onClick={() => this.setState({ selectedIndex: 3 })}
                     >
                       DATA VIZS
@@ -79,7 +78,7 @@ class AppInfectedCell extends Component {
                   </Route>
                   <Route path="/">
                     <Banner
-                      backgroundUrl={"../../images/lemur_banner.png"}
+                      backgroundUrl={"../../images/opencell_logo.png"}
                       mainText="Infected Cell"
                       paragraph="portal for the infected cell project"
                     />

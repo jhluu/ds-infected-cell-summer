@@ -21,7 +21,7 @@ class DataVizs extends Component {
         {/* <img className={cs.stanford} src={"../../../images/biohub.jpg"} /> */}
       </Grid>
       <Grid item xs={3}>
-Individual screen plot <p></p>
+Individual screen plot 
 Pairwise comparisons
         {/* <img className={cs.mnhn} src={"../../../images/biohub.jpg"} /> */}
       </Grid>
