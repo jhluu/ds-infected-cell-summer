@@ -10,7 +10,7 @@ ReactGA.initialize("UA-195392596-1", {
   },
 });
 
-ReactGA.pageview(window.location.pathname + window.location.search);
+// ReactGA.pageview(window.location.pathname + window.location.search);
 
 import { BrowserRouter } from "react-router-dom";
 

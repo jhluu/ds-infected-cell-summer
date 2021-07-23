@@ -12,7 +12,7 @@ import {
 import AboutLemur from "./infected-cell-pages/About.jsx";
 import DataAccess from "./infected-cell-pages/DataAccess.jsx";
 import CellxgeneInfoBoxView from "./infected-cell-pages/CellxgeneInfoBoxView.jsx";
-// import CellxgeneInfoBoxEdit from "./infected-cell-pages/CellxgeneInfoBoxEdit.jsx";
+import DataVizs from "./infected-cell-pages/DataVizs.jsx";
 // import CellTypesComponent from "./infected-cell-pages/CellTypes.jsx";
 
 import cs from "./appIC.scss";
@@ -57,6 +57,13 @@ class AppInfectedCell extends Component {
                     >
                       DATA
                     </CZUILink>,
+                    <CZUILink
+                      component={Link}
+                      to="/vizs"
+                      onClick={() => this.setState({ selectedIndex: 3 })}
+                    >
+                      DATA VIZS
+                    </CZUILink>,
                   ]}
                   navSelectedLinkIndex={this.state.selectedIndex}
                 />
@@ -66,6 +73,9 @@ class AppInfectedCell extends Component {
                   </Route>
                   <Route path="/whereisthedata">
                     <DataAccess />
+                  </Route>
+                  <Route path="/datavizs">
+                    <DataVizs />
                   </Route>
                   <Route path="/">
                     <Banner
