@@ -11,6 +11,40 @@ import DataVizs from "./infected-cell-pages/DataVizs.jsx";
 import cs from "./appIC.module.scss";
 import { StylesProvider } from "@material-ui/core/styles";
 
+/**
+ * How to add a new page:
+ * 1. Import the components at the top
+ * 2. Fill the pages array below in the desired page order
+ */
+
+const pages = [
+  {
+    menuTitle: "HOME", // what shows up on the menu
+    title: "Home", // the actual page title
+    path: "/", // the path passed to <Route />
+    exact: true, // path has to be exactly a "/"
+    component: CellxgeneInfoBoxView, // the component
+  },
+  {
+    menuTitle: "ABOUT",
+    title: "About",
+    path: "/about",
+    component: AboutLemur,
+  },
+  {
+    menuTitle: "DATA",
+    title: "Data",
+    path: "/whereisthedata",
+    component: DataAccess,
+  },
+  {
+    menuTitle: "CELL TYPES",
+    title: "Cell Types",
+    path: "/datavizs",
+    component: DataVizs,
+  },
+];
+
 class AppInfectedCell extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +52,14 @@ class AppInfectedCell extends Component {
       selectedIndex: 0,
     };
   }
+
+  componentDidMount() {
+    // Page user is on when refreshed or newly loaded
+    const path = this.props.location.pathname;
+    const pageIndex = pages.findIndex((x) => x.path === path);
+    this.setState({ selectedIndex: pageIndex });
+  }
+
   render() {
     return (
       <StylesProvider injectFirst>
@@ -27,57 +69,32 @@ class AppInfectedCell extends Component {
               <div class={cs.content}>
                 <NavBar
                   accent
-                  title={"Infected Cell"}
-                  navLinks={[
+                  title={"Tabula Sapiens"}
+                  // titleOptions={[
+                  //   <CZUILink
+                  //     component={Button}
+                  //     href="http://www.czbiohub.org"
+                  //     target="_blank"
+                  //   >
+                  //     CZ BIOHUB
+                  //   </CZUILink>,
+                  // ]}
+                  navLinks={pages.map((page, i) => (
                     <CZUILink
                       component={Link}
-                      to="/home"
-                      onClick={() => this.setState({ selectedIndex: 0 })}
+                      to={page.path}
+                      key={i}
+                      onClick={() => this.setState({ selectedIndex: i })}
                     >
-                      HOME
-                    </CZUILink>,
-                    <CZUILink
-                      component={Link}
-                      to="/about"
-                      onClick={() => this.setState({ selectedIndex: 1 })}
-                    >
-                      ABOUT
-                    </CZUILink>,
-                    <CZUILink
-                      component={Link}
-                      to="/whereisthedata"
-                      onClick={() => this.setState({ selectedIndex: 2 })}
-                    >
-                      DATA
-                    </CZUILink>,
-                    <CZUILink
-                      component={Link}
-                      to="/datavizs"
-                      onClick={() => this.setState({ selectedIndex: 3 })}
-                    >
-                      DATA VIZS
-                    </CZUILink>,
-                  ]}
+                      {page.menuTitle}
+                    </CZUILink>
+                  ))}
                   navSelectedLinkIndex={this.state.selectedIndex}
                 />
                 <Switch>
-                  <Route path="/about">
-                    <AboutLemur />
-                  </Route>
-                  <Route path="/whereisthedata">
-                    <DataAccess />
-                  </Route>
-                  <Route path="/datavizs">
-                    <DataVizs />
-                  </Route>
-                  <Route path="/">
-                    <Banner
-                      backgroundUrl={"../../images/opencell_logo.png"}
-                      mainText="Infected Cell"
-                      paragraph="portal for the infected cell project"
-                    />
-                    <CellxgeneInfoBoxView />
-                  </Route>
+                  {pages.map((route, i) => (
+                    <Route key={i} {...route} />
+                  ))}
                 </Switch>
               </div>
 
