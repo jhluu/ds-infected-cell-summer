@@ -4,7 +4,7 @@ import { orderBy, filter } from "lodash/fp";
 import { Search, Select, Table } from "hub-ui";
 import cs from "./LemurSummary.module.scss";
 
-import lemur_summary_csv from "./LCA_lemur_characteristics.csv";
+import * as d3 from "d3";
 
 const COLUMNS = [
   {
@@ -71,6 +71,7 @@ class IndividualSummary extends Component {
       selectedIndividual: null,
       searchQuery: "",
       sortParams: null,
+      tableData: null,
     };
   }
 
@@ -91,6 +92,18 @@ class IndividualSummary extends Component {
       sortParams,
     });
   };
+
+  setTableData = (tableData) => {
+    this.setState({
+      tableData,
+    });
+  };
+
+  componentDidMount() {
+    d3.csv("/data/LCA_lemur_characteristics.csv").then((csvData) => {
+      this.setTableData(csvData);
+    });
+  }
 
   // Sort the data based on the sort params.
   sortData = (data) => {
@@ -134,7 +147,8 @@ class IndividualSummary extends Component {
 
   // const VerboseTableStory = () => {
   render() {
-    const { selectedIndividual, searchQuery, sortParams } = this.state;
+    const { selectedIndividual, searchQuery, sortParams, tableData } =
+      this.state;
     // Sorting is not implemented in the Table.
     // You must store the sortParams and implement the sorting logic in the parent component.
     // const [sortParams, setSortParams] = React.useState(null);
@@ -162,13 +176,15 @@ class IndividualSummary extends Component {
         <div className={cs.description}>
           Click on the table headers to sort by column.
         </div>
-        <Table
-          data={this.processData(lemur_summary_csv)}
-          columns={COLUMNS}
-          className={cs.table}
-          onSortParamChange={this.setSortParams}
-          sortParams={sortParams}
-        />
+        {tableData && (
+          <Table
+            data={this.processData(tableData)}
+            columns={COLUMNS}
+            className={cs.table}
+            onSortParamChange={this.setSortParams}
+            sortParams={sortParams}
+          />
+        )}
       </div>
     );
   }
