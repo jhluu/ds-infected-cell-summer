@@ -10,9 +10,6 @@ import pandas as pd
 
 import plotly.graph_objects as go
 
-HAV_df = pd.read_csv('/Users/jacklyn.luu/Desktop/ds-infected-cell-summer/test_data/HAV_compare.txt', delimiter = "\t")
-fig = go.scatter(HAV_df, x="Dataset 1", y="Dataset 2", hover_data=['id'])
-
 def configure_app(app: dash.Dash):
     class Ids:
         pass
@@ -21,11 +18,6 @@ def configure_app(app: dash.Dash):
         children=[
             dcc.Location(id="url"),
             # TODO: add figures
-            html.H1(children='NF pipeline compared to Wang paper data'),
-
-            html.Div(children='''Nextflow pipeline was adapted by Fred Hutchinson's lab '''),
-            
-            dcc.Graph( id='example-graph', figure=fig)
         ]
     )
 
