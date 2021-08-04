@@ -2,82 +2,124 @@ import React, { Component } from "react";
 import { orderBy, filter } from "lodash/fp";
 
 import { Search, Select, Table } from "hub-ui";
-import cs from "./LemurSummary.module.scss";
+import cs from "./CrisprStudiesSummary.scss";
 
 import * as d3 from "d3";
 
+
 const COLUMNS = [
   {
-    dataKey: "Individual",
-    header: "Individual",
+    dataKey: "First Author",
+    header: "First Author",
     bold: true,
     width: 120,
     flexGrow: 3,
   },
   {
-    dataKey: "Species",
-    header: "Species",
+    dataKey: "Virus Acronym",
+    header: "Virus Acronym",
     width: 100,
     flexGrow: 3,
   },
   {
-    dataKey: "Age (yr)",
-    header: "Age (yr)",
+    dataKey: "Virus",
+    header: "Virus",
     width: 100,
     flexGrow: 3,
   },
   {
-    dataKey: "Sex",
-    header: "Sex",
+    dataKey: "Publication",
+    header: "Publication",
     width: 120,
     flexGrow: 3,
   },
   {
-    dataKey: "Weight (g)",
-    header: "Weight (g)",
+    dataKey: "Link to raw data",
+    header: "Link to raw data",
+    width: 120,
+    flexGrow: 3,
+  },
+  {
+    dataKey: "Library Used",
+    header: "Library Used",
+    width: 120,
+    flexGrow: 3,
+  },
+  {
+    dataKey: "Status",
+    header: "Status",
     width: 120,
     flexGrow: 3,
   },
 ];
 
-const Individuals = [
+
+const Virus = [
   {
     value: null,
     label: "Show all",
   },
   {
-    value: "Lemur 1",
-    label: "Lemur 1",
+    value: "Dengue virus 2 16681 strain",
+    label: "Dengue",
   },
   {
-    value: "Lemur 2",
-    label: "Lemur 2",
+    value: "SARS-CoV-2",
+    label: "SARS-CoV-2",
   },
   {
-    value: "Lemur 3",
-    label: "Lemur 3",
+    value: "Human coronavirus OC43",
+    label: "Human coronavirus",
   },
   {
-    value: "Lemur 4",
-    label: "Lemur 4",
+    value: "Human coronavirus 229E",
+    label: "Human coronavirus",
+  },
+  {
+    value: "Human coronavirus NL63",
+    label: "Human coronavirus",
+  },
+  {
+    value: "Hepatitis C virus JFH1",
+    label: "Hepatitis C",
+  },
+  {
+    value: "Hepatitis A virus",
+    label: "Hepatitis A",
+  },
+  {
+    value: "West Nile virus",
+    label: "West Nile",
+  },
+  {
+    value: "enterovirus D68",
+    label: "enterovirus",
+  },
+  {
+    value: "Rhinovirus C15",
+    label: "Rhinovirus",
+  },
+  {
+    value: "Ebola (Mayinga)",
+    label: "Ebola",
   },
 ];
 
-class IndividualSummary extends Component {
+class VirusSummary extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedIndividual: null,
+      selectedVirus: null,
       searchQuery: "",
       sortParams: null,
       tableData: null,
     };
   }
 
-  setSelectedIndividual = (selectedIndividual) => {
+  setSelectedVirus = (selectedVirus) => {
     this.setState({
-      selectedIndividual,
+      selectedVirus,
     });
   };
 
@@ -100,7 +142,7 @@ class IndividualSummary extends Component {
   };
 
   componentDidMount() {
-    d3.csv("/data/LCA_lemur_characteristics.csv").then((csvData) => {
+    d3.csv("/data/CRISPR_screen_datasets.csv").then((csvData) => {
       this.setTableData(csvData);
     });
   }
@@ -123,11 +165,11 @@ class IndividualSummary extends Component {
 
   // Filter the data based on various options.
   filterData = (data) => {
-    const { selectedIndividual, searchQuery } = this.state;
+    const { selectedVirus, searchQuery } = this.state;
     let filteredData = data;
     console.log(filteredData);
-    if (selectedIndividual) {
-      filteredData = filter(["Individual", selectedIndividual], filteredData);
+    if (selectedVirus) {
+      filteredData = filter(["Virus", selectedVirus], filteredData);
     }
 
     if (searchQuery) {
@@ -147,7 +189,7 @@ class IndividualSummary extends Component {
 
   // const VerboseTableStory = () => {
   render() {
-    const { selectedIndividual, searchQuery, sortParams, tableData } =
+    const { selectedVirus, searchQuery, sortParams, tableData } =
       this.state;
     // Sorting is not implemented in the Table.
     // You must store the sortParams and implement the sorting logic in the parent component.
@@ -167,10 +209,10 @@ class IndividualSummary extends Component {
           <Select
             // items={statuses.map((status, i) => ({value: i, label: status}))}
             className={cs.select}
-            items={Individuals}
-            value={selectedIndividual}
-            onChange={this.setSelectedIndividual}
-            placeholder="Filter by Individual..."
+            items={Virus}
+            value={selectedVirus}
+            onChange={this.setSelectedVirus}
+            placeholder="Filter by Virus..."
           />
         </div>
         <div className={cs.description}>
@@ -190,4 +232,4 @@ class IndividualSummary extends Component {
   }
 }
 
-export default IndividualSummary;
+export default VirusSummary;
