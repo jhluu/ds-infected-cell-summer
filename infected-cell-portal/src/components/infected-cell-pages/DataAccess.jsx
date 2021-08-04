@@ -9,7 +9,7 @@ import cs from "./DataAccess.module.scss";
 import Heading from "./Heading.jsx";
 import { InfoBox } from "hub-ui";
 
-import LemurSummary from "../lemur-summary/LemurSummary.jsx";
+import VirusSummary from "../crispr-studies-summary/CrisprStudiesSummary.jsx";
 
 class DataAccess extends Component {
   render() {
@@ -32,9 +32,8 @@ class DataAccess extends Component {
                 Nature. 2009 Sep 10;461(7261):168-70
               </a>
               ). By accessing these data, you agree not to publish any articles
-              containing analyses of genes, cell types or transcriptomic data on
-              a whole atlas or tissue scale prior to initial publication by the
-              Tabula Microcebus Consortium and its collaborating scientists. If
+              prior to initial publication by the
+              Infected Cell Consortium and its collaborating scientists. If
               you wish to make use of restricted data for publication or are
               interested in collaborating on the analyses of these data, please
               use the{" "}
@@ -55,41 +54,8 @@ class DataAccess extends Component {
           {" "}
           <p></p> Data in this table is summarized from the project metadata.
         </div>
-        <LemurSummary />
-
-        {/* <Heading title="Raw data available on AWS" />
-        <Grid>
-          <Grid item xs={12}>
-            <div className={cs.body}>
-              <InfoBox
-                title={"Tabula Microcebus on AWS Open Datasets Registry"}
-                description={
-                  "The raw sequencing files of the Tabula Microcebus dataset are made available for anyone to use via Amazon S3"
-                }
-                buttonTitle="Access the data"
-                buttonLink="https://s3.console.aws.amazon.com/s3/buckets/czb-tabula-microcebus"
-                openInNewTab={true}
-                image={"../../images/aws-sapiens.png"}
-              />
-            </div>
-          </Grid>
-        </Grid> */}
-
-        <Heading title="Processed data available from figshare" />
-        <Grid>
-          <Grid item xs={12}>
-            <div className={cs.body}>
-              <InfoBox
-                title={"Infect Cell on figshare"}
-                description={"Data objects from figshare"}
-                buttonTitle="Access the data"
-                buttonLink="https://figshare.com/projects/Tabula_Microcebus/112227"
-                openInNewTab={true}
-                image={"../../images/figshare.png"}
-              />
-            </div>
-          </Grid>
-        </Grid>
+        <VirusSummary />
+        
       </div>
     );
   }
