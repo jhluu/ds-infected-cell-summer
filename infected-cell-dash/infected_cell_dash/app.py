@@ -8,10 +8,10 @@ import dash_html_components as html
 
 import pandas as pd
 
-import plotly.graph_objects as go
+import plotly.express as px
 
-HAV_df = pd.read_csv('/Users/jacklyn.luu/Desktop/ds-infected-cell-summer/test_data/HAV_compare.txt', delimiter = "\t")
-fig = go.scatter(HAV_df, x="Dataset 1", y="Dataset 2", hover_data=['id'])
+HAV_df = pd.read_csv('/Users/jacklyn.luu/Desktop/ds-infected-cell-summer/test_data/HAV_compare.txt', delimiter = ",")
+fig = px.scatter(HAV_df, x="Dataset 1", y="Dataset 2", hover_data=['id'])
 
 def configure_app(app: dash.Dash):
     class Ids:

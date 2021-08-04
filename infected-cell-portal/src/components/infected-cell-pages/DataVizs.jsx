@@ -22,6 +22,7 @@ class DataVizs extends Component {
             <Grid item xs={3}>
               Individual screen plot Pairwise comparisons
               {/* <img className={cs.mnhn} src={"../../../images/biohub.jpg"} /> */}
+              <iframe src="http://127.0.0.1:8050/" width="540" height="450"></iframe>
             </Grid>
           </Grid>
         </div>
