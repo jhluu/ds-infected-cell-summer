@@ -7,6 +7,7 @@ import AboutLemur from "./infected-cell-pages/About.jsx";
 import DataAccess from "./infected-cell-pages/DataAccess.jsx";
 import CellxgeneInfoBoxView from "./infected-cell-pages/CellxgeneInfoBoxView.jsx";
 import DataVizs from "./infected-cell-pages/DataVizs.jsx";
+import CompareScreens from "./infected-cell-pages/CompareScreens.jsx";
 
 import cs from "./appIC.module.scss";
 import { StylesProvider } from "@material-ui/core/styles";
@@ -38,10 +39,16 @@ const pages = [
     component: DataAccess,
   },
   {
-    menuTitle: "CELL TYPES",
-    title: "Cell Types",
+    menuTitle: "EXPLORE SCREENS",
+    title: "Explore Screens",
     path: "/datavizs",
     component: DataVizs,
+  },
+  {
+    menuTitle: "COMPARE SCREENS",
+    title: "Compare Screens",
+    path: "/comparescreens",
+    component: CompareScreens,
   },
 ];
 
