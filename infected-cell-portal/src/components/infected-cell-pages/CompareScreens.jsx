@@ -5,16 +5,14 @@ import Heading from "./Heading.jsx";
 import cs from "./Cellxgene.module.scss";
 import { Grid } from "@material-ui/core";
 
-class DataVizs extends Component {
+class CompareScreens extends Component {
   render() {
     return (
-      <div>
-        <div className={cs.content}>
-          
-        </div>
+      <div className={cs.content}>
+          <Heading title="Pairwise Comparisons" />
       </div>
     );
   }
 }
 
-export default DataVizs;
+export default CompareScreens;
