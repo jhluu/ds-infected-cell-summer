@@ -76,7 +76,7 @@ class AppInfectedCell extends Component {
               <div class={cs.content}>
                 <NavBar
                   accent
-                  title={"Tabula Sapiens"}
+                  title={"Infected Cell"}
                   // titleOptions={[
                   //   <CZUILink
                   //     component={Button}
